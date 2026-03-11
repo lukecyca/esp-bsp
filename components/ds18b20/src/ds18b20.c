@@ -183,8 +183,7 @@ esp_err_t ds18b20_get_temperature(ds18b20_device_handle_t ds18b20, float *ret_te
 
     // detect uninitialized power-on state
     // https://github.com/cpetrich/counterfeit_DS18B20#solution-to-the-85-c-problem
-    if (scratchpad._reserved2 == 0x0c && scratchpad.temp_msb == 0x05 && scratchpad.temp_lsb == 0x50)
-    {
+    if (scratchpad._reserved2 == 0x0c && scratchpad.temp_msb == 0x05 && scratchpad.temp_lsb == 0x50) {
         ESP_LOGW(TAG, "read power-on value (85.0)");
         return ESP_ERR_INVALID_STATE;
     }
