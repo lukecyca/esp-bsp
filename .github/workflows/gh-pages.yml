@@ -17,7 +17,7 @@ jobs:
       component_manager_ver: "2.2.*"
     strategy:
       matrix:
-        idf_ver: ["release-v5.4"]
+        idf_ver: ["release-v5.5"]
     runs-on: ubuntu-latest
     container: espressif/idf:${{ matrix.idf_ver }}
     steps:
